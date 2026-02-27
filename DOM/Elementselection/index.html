@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta Information -->
+    <meta charset="UTF-8">
+    <meta name="description" content="Dummy HTML Page">
+    <meta name="keywords" content="HTML, CSS, Example">
+    <meta name="author" content="Your Name">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dummy HTML Page</title>
+
+    <!-- Internal CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .box {
+            border: 1px solid #333;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .highlight {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Welcome to Dummy HTML Page</h1>
+        <nav>
+            <a href="#home" procodrr="Home" name="Homename" class="nav nav-item homecalss homeclass">Home</a> |
+            <a href="#about" procodrr="About">About</a> |
+            <a href="#contact" procodrr="Contact">Contact</a>
+        </nav>
+    </header>
+
+    <hr>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Section with div, span, p -->
+        <section id="home" class="box">
+            <h2>Text Elements</h2>
+            <div class="container">
+                <p>This is a paragraph inside a div.</p>
+                <p>This contains a <span class="highlight">span element</span> inside it.</p>
+            </div>
+        </section>
+
+        <!-- Image Section -->
+        <section class="box">
+            <h2>Image Example</h2>
+            <img src="https://via.placeholder.com/150" alt="Placeholder Image">
+        </section>
+
+        <!-- List Section -->
+        <section class="box">
+            <h2>Lists</h2>
+
+            <h3>Unordered List</h3>
+            <ul>
+                <li>Item One</li>
+                <li>Item Two</li>
+                <li>Item Three</li>
+            </ul>
+
+            <h3>Ordered List</h3>
+            <ol>
+                <li>First</li>
+                <li>Second</li>
+                <li>Third</li>
+            </ol>
+        </section>
+
+        <!-- Table Section -->
+        <section class="box">
+            <h2>Table Example</h2>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Age</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>John</td>
+                        <td>25</td>
+                    </tr>
+                    <tr>
+                        <td>Jane</td>
+                        <td>28</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Form Section -->
+        <section id="contact" class="box">
+            <h2>Form Example</h2>
+            <form action="#" method="post">
+                
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name"><br><br>
+
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email"><br><br>
+
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message"></textarea><br><br>
+
+                <label>Gender:</label><br>
+                <input type="radio" name="gender" value="male"> Male
+                <input type="radio" name="gender" value="female"> Female<br><br>
+
+                <label>Hobbies:</label><br>
+                <input type="checkbox" name="hobby" value="reading"> Reading
+                <input type="checkbox" name="hobby" value="sports"> Sports<br><br>
+
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+            </form>
+        </section>
+
+    </main>
+
+    <hr>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2026 Dummy HTML Page. All rights reserved.</p>
+    </footer>
+
+    <script src="./script.js"></script>
+
+</body>
+</html>
