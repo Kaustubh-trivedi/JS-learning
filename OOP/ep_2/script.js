@@ -117,16 +117,16 @@ console.log(user7.constructor) //same thing
 
 
 //How to put common mehtod in all objects?
-function createUser5(firstName, lastName, age) {
+function CreateUser5(firstName, lastName, age) {  //This is constructor function
   this.firstName = firstName,
     this.lastName = lastName,
     this.age = age
 };
-createUser5.prototype.getAgeYear5 = function () {
+CreateUser5.prototype.getAgeYear5 = function () {
   console.log("This",this)
   return new Date().getFullYear() - this.age
 }
-const user9 = new createUser5("Ravi", "Singh", 33);
-const user10 = new createUser5("Abhi", "Mishra", 30);
+const user9 = new CreateUser5("Ravi", "Singh", 33);
+const user10 = new CreateUser5("Abhi", "Mishra", 30);
 
-console.log(user9.getAgeYear5()) //both are same
+console.log(user9.getAgeYear5()) 
