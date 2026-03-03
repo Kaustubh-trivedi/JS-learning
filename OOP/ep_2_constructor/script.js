@@ -123,7 +123,7 @@ function CreateUser5(firstName, lastName, age) {  //This is constructor function
     this.age = age
 };
 CreateUser5.prototype.getAgeYear5 = function () {
-  console.log("This",this)
+  // console.log("This",this)
   return new Date().getFullYear() - this.age
 }
 const user9 = new CreateUser5("Ravi", "Singh", 33);
