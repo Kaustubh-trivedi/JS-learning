@@ -1,0 +1,18 @@
+.container {
+  color: green;
+  flex-wrap: wrap;
+  gap: 8px;
+  display: flex;
+}
+
+.card {
+  background-color: pink;
+  border-radius: 4px;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 80px;
+  font-size: 36px;
+  display: flex;
+}
+/*# sourceMappingURL=npm_redux.3a01df49.css.map */
