@@ -1,0 +1,62 @@
+function createUser(firstName, lastName, age) {
+  const user = {
+    firstName,
+    lastName,
+    age,
+    getAgeYear() {
+      return new Date().getFullYear() - user.age
+    }
+  }
+  return user
+}
+const user1 = createUser('aman', "gupta", 43)
+const user2 = createUser('raman', "gupta", 34)
+//The issue with this factory function is that is it taking seperate memory for seperate object.
+
+//how to solve -> Crete a global function but this will again create encapsulation problem.
+
+function getAgeYear2() {
+  return new Date().getFullYear() - this.age
+}
+function createUser2(firstName, lastName, age) {
+  const user = {
+    firstName,
+    lastName,
+    age,
+    getAgeYear2
+  }
+  return user
+};
+const user3 = createUser2("ramesh", "wadhwa", 45)
+//Jis object ke andr se function ko call krte hai, us object ko point krta hai this keyword
+const user4 = createUser2("acvs", "", 43);
+console.log(user3.getAgeYear2 === user4.getAgeYear2)  //true because memory me same space pr hai.
+
+//We achieved polymorphism (Many forms using this keyword
+// But we've broken the encapsulation , function can be accessed easily.
+
+
+function createUser3(firstName, lastName, age) {
+  const user = {
+    firstName,
+    lastName,
+    age,
+    getAgeYear3: createUser3.commonMethod.getAgeYear3
+  }
+  return user
+};
+createUser3.commonMethod = {   //by doing this, encapsulation is still there, the getAgeyear3 is still capsuled inside createUser3 function
+  getAgeYear3() {
+    return new Date().getFullYear() - this.age
+  }
+}
+const user5 = createUser3("ramesh", "wadhwa", 45)
+const user6 = createUser3("dinesh", "wadhwa", 45)
+
+//Now user5 and user6 both will have getAgeYear3 properties and also this is on the same space in memory.
+console.log(user5.getAgeYear3 === user6.getAgeYear3) //true
+
+
+
+///PROTOTYPES
+
