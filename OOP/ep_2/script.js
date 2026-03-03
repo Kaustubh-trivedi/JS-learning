@@ -59,4 +59,38 @@ console.log(user5.getAgeYear3 === user6.getAgeYear3) //true
 
 
 ///PROTOTYPES
+//everyfunction in js has prototype propety.
+//How to access it?
+function sayHi() { console.log("HII") }
 
+console.log(sayHi.prototype)
+//IT will have constructor propery. Which basically shows the same function (sayHi- definition)
+
+
+
+
+
+
+//new keyword
+// if we call a function with new keyword, it returns an object always.
+console.log(new sayHi())   //===> Returns object
+
+//this will behave diffrently with both calling
+function thishi() { console.log(this) }
+thishi(); //=> It is function of window object so this will refer to window object.
+new thishi() //-> with new keyword, this will refer to thishi function only.
+
+
+function createUser4(firstName, lastName, age) {
+  this.firstName = firstName,
+    this.lastName = lastName,
+    this.age = age
+};
+const user7 = new createUser4("abcd", "efgg", 43); //new keyword will automatically return an object
+
+// ---
+//if we have created like this
+const user8 = createUser4("fdsf", "fsd", 46); 
+//there is no return in creteUser4, it willhave undefined value.
+//this in this case will be pointing to window object, so the firstnmae = fdsf, lastname= fsd and age=46 will be created in the window objcet.
+// ---
