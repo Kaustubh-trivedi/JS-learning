@@ -90,7 +90,43 @@ const user7 = new createUser4("abcd", "efgg", 43); //new keyword will automatica
 
 // ---
 //if we have created like this
-const user8 = createUser4("fdsf", "fsd", 46); 
+const user8 = createUser4("fdsf", "fsd", 46);
 //there is no return in creteUser4, it willhave undefined value.
 //this in this case will be pointing to window object, so the firstnmae = fdsf, lastname= fsd and age=46 will be created in the window objcet.
 // ---
+
+
+
+//protoype and __proto__
+//when we create user7 with createUser4 function, the prototype property of createUser4 (createUser4.prototype) is attached with user7 with __proto__
+console.log(user7.__proto__ === createUser4.prototype) //true
+
+//so if we do
+console.log(user7.__proto__.constructor)
+// or
+console.log(user7.constructor) //same thing
+// we will get the object returned
+// OUTPUT on console
+// ƒ createUser4(firstName, lastName, age) {
+//   this.firstName = firstName,
+//     this.lastName = lastName,
+//     this.age = age
+// }
+
+
+
+
+//How to put common mehtod in all objects?
+function createUser5(firstName, lastName, age) {
+  this.firstName = firstName,
+    this.lastName = lastName,
+    this.age = age
+};
+createUser5.prototype.getAgeYear5 = function () {
+  console.log("This",this)
+  return new Date().getFullYear() - this.age
+}
+const user9 = new createUser5("Ravi", "Singh", 33);
+const user10 = new createUser5("Abhi", "Mishra", 30);
+
+console.log(user9.getAgeYear5()) //both are same
