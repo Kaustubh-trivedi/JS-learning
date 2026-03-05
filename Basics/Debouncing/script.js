@@ -57,8 +57,68 @@ function debouce(func, delay) {
     }
 };
 const input = document.getElementById("searchInput");
-console.log(input)
+// console.log(input)
 const handleInput = debouce(function (e) { console.log(e.target.value) }, 500);
-input.addEventListener("input", handleInput);
+// input.addEventListener("input", handleInput);
 
 
+//procodrr
+const inputProcodrr = document.querySelector(".procodrr");
+
+const handleInput2 = (e) => {
+    console.log(e.target.value);
+}
+
+const debouce2 = (fn, wait) => {
+    let timer;
+    return function (...args) {
+        if (timer) { clearTimeout(timer) }
+         timer = setTimeout(() => {
+            fn(...args)
+        }, wait)
+    }
+}
+
+const apiCall = debouce2(handleInput2, 1000)
+
+inputProcodrr.addEventListener('input', apiCall)
+
+
+
+// REACT CODE
+// import React, { useState, useMemo } from 'react';
+// import './style.css';
+
+// export default function App() {
+//   let [input, setInput] = useState('');
+//   const handleChange = (e) => {
+//     console.log(e.target.value);
+//   };
+//   const debounce = (fn, wait) => {
+//     let timer;
+//     return function (e) {
+//       if (timer) {
+//         clearTimeout(timer);
+//       }
+//       timer = setTimeout(() => {
+//         fn(e);
+//       }, wait);
+//       // fn(e);
+//     };
+//   };
+//   const apicall = useMemo(() => debounce(handleChange, 1000), []);
+//   return (
+//     <div>
+//       <h1>Hello StackBlitz!</h1>
+//       <p>Start editing to see some magic happen :)</p>
+//       <input
+//         type="text"
+//         value={input}
+//         onChange={(e) => {
+//           setInput(e.target.value);
+//           apicall(e);
+//         }}
+//       />
+//     </div>
+//   );
+// }
